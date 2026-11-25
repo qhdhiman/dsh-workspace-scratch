@@ -88,3 +88,20 @@ test('the index ships in the package so a publish also hosts it', async () => {
   assert.ok(manifest.files.includes('cordis.patch.yml'), 'the bundle patch must ship')
   assert.ok((await stat(new URL('plugin-index.json', ROOT))).size > 0)
 })
+
+test('the index carries repository and homepage without any build flags', async () => {
+  // `prepublishOnly` runs `npm run build:index` with no arguments, so anything
+  // the build only fills from flags is silently dropped right before publishing.
+  // These links must therefore come from package.json.
+  const manifest = await readJson('package.json')
+  const index = await validatedIndex()
+  const [entry] = index.plugins
+
+  const expectedRepo = manifest.repository.url.replace(/^git\+/, '').replace(/\.git$/, '')
+  assert.equal(entry.repository?.url, expectedRepo, 'repository.url must survive a flag-free build')
+  assert.equal(entry.homepage, manifest.homepage, 'homepage must survive a flag-free build')
+  assert.equal(entry.author, manifest.author, 'author must survive a flag-free build')
+
+  // The validator rejects credentials, queries and fragments in repository URLs.
+  assert.doesNotMatch(entry.repository.url, /[@#?]/)
+})

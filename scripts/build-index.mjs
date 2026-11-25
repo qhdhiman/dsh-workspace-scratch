@@ -73,7 +73,38 @@ async function inlineIcon() {
 
 const manifest = JSON.parse(await readFile(`${ROOT}package.json`, 'utf8'))
 
-/** The declared author, so `npm run build:index` needs no flags. */
+/** The manifest's repository URL without git+ / .git decoration, else undefined. */
+function manifestRepositoryUrl() {
+  const raw = manifest.repository
+  const url = typeof raw === 'string' ? raw : typeof raw?.url === 'string' ? raw.url : undefined
+  if (url === undefined) return undefined
+  return url.replace(/^git\+/, '').replace(/\.git$/, '')
+}
+
+/** The manifest's repository subdirectory, when the package lives in a monorepo. */
+function manifestDirectory() {
+  return typeof manifest.repository === 'object' && typeof manifest.repository?.directory === 'string'
+    ? manifest.repository.directory
+    : undefined
+}
+
+/** The manifest's homepage, so a flag-free run still fills it in. */
+function buildHomepage() {
+  if (args.homepage !== undefined) return String(args.homepage)
+  return typeof manifest.homepage === 'string' && manifest.homepage.trim() !== ''
+    ? manifest.homepage.trim()
+    : undefined
+}
+
+/** Resolved display links, so a flag-free run still fills them in. */
+function buildRepository() {
+  const url = args.repository === undefined ? manifestRepositoryUrl() : String(args.repository)
+  if (url === undefined) return undefined
+  const directory = args.directory === undefined ? manifestDirectory() : String(args.directory)
+  return { url, ...directory === undefined ? {} : { directory } }
+}
+
+/** The manifest's author, so `npm run build:index` needs no flags. */
 function buildAuthor() {
   if (args.author !== undefined) return String(args.author)
   const declared = typeof manifest.author === 'string' ? manifest.author : undefined
@@ -119,15 +150,8 @@ const plugins = [
     description: meta.description,
     icon: await inlineIcon(),
     ...buildAuthor() === undefined ? {} : { author: buildAuthor() },
-    ...args.homepage === undefined ? {} : { homepage: String(args.homepage) },
-    ...args.repository === undefined
-      ? {}
-      : {
-          repository: {
-            url: String(args.repository),
-            ...args.directory === undefined ? {} : { directory: String(args.directory) },
-          },
-        },
+    ...buildHomepage() === undefined ? {} : { homepage: buildHomepage() },
+    ...buildRepository() === undefined ? {} : { repository: buildRepository() },
     metadata: {
       category: 'workspace',
       keywords: [
