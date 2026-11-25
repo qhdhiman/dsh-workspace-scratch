@@ -25,32 +25,37 @@
 
 ## 安装（已发布到 npm）
 
-**插件已发布**：`dsh-workspace-scratch@0.2.1` → https://www.npmjs.com/package/dsh-workspace-scratch
+**插件已发布**：`dsh-workspace-scratch@0.2.2` → https://www.npmjs.com/package/dsh-workspace-scratch
 
 ### 通过官方 Discover 安装
 
 在 DSH 里 **Plugins → Discover** 添加这个索引地址：
 
 ```
-https://unpkg.com/dsh-workspace-scratch@0.2.1/plugin-index.json
+https://unpkg.com/dsh-workspace-scratch@0.2.2/plugin-index.json
 ```
 
 然后搜索 `工作区` / `workspace` / `scratch`，点安装。
 
-> 该地址已实测返回 200 且无重定向（Discover 拒绝重定向），索引也通过官方
-> `@deepseek-ai/dsh-plugin-market-index` 校验。带版本号意味着**每次发新版要换 URL**；
-> 建好 GitHub 仓库后可改用 `raw.githubusercontent.com` 的稳定地址。
+> 已实测：HTTP 200、**无重定向**（Discover 拒绝重定向）、索引通过官方
+> `@deepseek-ai/dsh-plugin-market-index` 校验。
+>
+> 仓库地址：https://github.com/qhdhiman/dsh-workspace-scratch
+>
+> 为什么用 unpkg 而不是 GitHub raw：`raw.githubusercontent.com` 在部分网络环境
+> （含本机实测）SSL 握手即失败，且 `cdn.jsdelivr.net` 也不可达；**unpkg 是实测可用的**。
+> 代价是 URL 带版本号，**发新版要更新 URL**。
 
 ### 直接安装
 
 ```bash
-dsh plugin --profile <profile> install dsh-workspace-scratch@0.2.1
+dsh plugin --profile <profile> install dsh-workspace-scratch@0.2.2
 ```
 
 或在对话里：
 
 ```text
-plugin_manager install_bundle target: "dsh-workspace-scratch@0.2.1"
+plugin_manager install_bundle target: "dsh-workspace-scratch@0.2.2"
 ```
 
 ## 本地开发安装

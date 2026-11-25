@@ -1,6 +1,6 @@
 {
   "name": "dsh-workspace-scratch",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Keep a DeepSeek Harness workspace clean: every session gets a hidden .dsh directory for its scratch files and durable memory notes, plus scratch/memory tools, prompt guidance and a Settings page.",
   "type": "module",
   "icon": "./icon.svg",
@@ -60,5 +60,13 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qhdhiman/dsh-workspace-scratch.git"
+  },
+  "homepage": "https://github.com/qhdhiman/dsh-workspace-scratch#readme",
+  "bugs": {
+    "url": "https://github.com/qhdhiman/dsh-workspace-scratch/issues"
   }
 }

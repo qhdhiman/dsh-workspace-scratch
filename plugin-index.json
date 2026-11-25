@@ -31,6 +31,10 @@
       },
       "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IldvcmsgYXJlYSBzY3JhdGNoIGFuZCBtZW1vcnkiPgogIDx0aXRsZT5Xb3JrIGFyZWEgc2NyYXRjaCBhbmQgbWVtb3J5PC90aXRsZT4KICA8IS0tIENvbG9yOiBEZWVwU2VlayBicmFuZCBibHVlICM0MTc2ZTYsIHRoZSB0b2tlbiBEU0ggdXNlcyBmb3IgYWxpYXMtbGluawogICAgICAgYW5kIHN0YXRlLWJ1c2luZXNzLXByaW1hcnkuIDQuMjM6MSBvbiB3aGl0ZSBhbmQgNC4zMToxIG9uIHRoZSBkYXJrCiAgICAgICBzdXJmYWNlLCBzbyBvbmUgbGl0ZXJhbCBjb2xvciByZWFkcyBvbiBib3RoIHRoZW1lcy4KICAgICAgIFNoYXBlOiBhIGNvbXBhY3QgZGlyZWN0b3J5IHRha2luZyB+ODAlIG9mIHRoZSBib3gsIHNvIHRoZSBpY29uIGNhcnJpZXMKICAgICAgIHRoZSBzYW1lIHZpc3VhbCB3ZWlnaHQgYXMgaXRzIG5laWdoYm91cnMuIC0tPgogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzQxNzZlNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KICAgIDxwYXRoIGQ9Ik0zLjQgNi40YTIuNCAyLjQgMCAwIDEgMi40LTIuNGgzLjlsMi40IDIuOGg2LjFhMi40IDIuNCAwIDAgMSAyLjQgMi40djguNGEyLjQgMi40IDAgMCAxLTIuNCAyLjRINS44YTIuNCAyLjQgMCAwIDEtMi40LTIuNHoiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgPGNpcmNsZSBjeD0iMTIuNCIgY3k9IjEzLjYiIHI9IjIuNSIgZmlsbD0iIzQxNzZlNiIgc3Ryb2tlPSJub25lIi8+CiAgPC9nPgo8L3N2Zz4K",
       "author": "qhdhiman",
+      "homepage": "https://github.com/qhdhiman/dsh-workspace-scratch#readme",
+      "repository": {
+        "url": "https://github.com/qhdhiman/dsh-workspace-scratch"
+      },
       "metadata": {
         "category": "workspace",
         "keywords": [
@@ -49,8 +53,8 @@
       },
       "versions": [
         {
-          "version": "0.2.1",
-          "publishTimestamp": 1795579072,
+          "version": "0.2.2",
+          "publishTimestamp": 1795579549,
           "source": {
             "type": "npm"
           },
