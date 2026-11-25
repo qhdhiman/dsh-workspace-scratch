@@ -25,14 +25,14 @@
 
 ## 安装（已发布到 npm）
 
-**插件已发布**：`dsh-workspace-scratch@0.2.3` → https://www.npmjs.com/package/dsh-workspace-scratch
+**插件已发布**：`dsh-workspace-scratch@0.2.4` → https://www.npmjs.com/package/dsh-workspace-scratch
 
 ### 通过官方 Discover 安装
 
 在 DSH 里 **Plugins → Discover** 添加这个索引地址：
 
 ```
-https://unpkg.com/dsh-workspace-scratch@0.2.3/plugin-index.json
+https://unpkg.com/dsh-workspace-scratch@0.2.4/plugin-index.json
 ```
 
 然后搜索 `工作区` / `workspace` / `scratch`，点安装。
@@ -49,20 +49,20 @@ https://unpkg.com/dsh-workspace-scratch@0.2.3/plugin-index.json
 ### 直接安装
 
 ```bash
-dsh plugin --profile <profile> install dsh-workspace-scratch@0.2.3
+dsh plugin --profile <profile> add dsh-workspace-scratch@0.2.4
 ```
 
 或在对话里：
 
 ```text
-plugin_manager install_bundle target: "dsh-workspace-scratch@0.2.3"
+plugin_manager install_bundle target: "dsh-workspace-scratch@0.2.4"
 ```
 
 ## 本地开发安装
 
 ```bash
 # 1. 装进当前 profile（desktop）。也可以直接用 GUI 的插件页安装/启用。
-dsh plugin --profile desktop install ~/.dsh/plugins/dsh-workspace-scratch
+dsh plugin --profile desktop add ~/.dsh/plugins/dsh-workspace-scratch
 
 # 2. 重启该 profile 生效
 ```
