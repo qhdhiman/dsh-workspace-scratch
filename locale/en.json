@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Workspace scratch and memory",
+    "description": "Gives every session a hidden .dsh directory in the workspace root for scratch files and memory notes, with scratch and memory tools, so the workspace itself stays clean."
+  }
+}

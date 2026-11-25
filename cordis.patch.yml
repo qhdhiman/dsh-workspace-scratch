@@ -1,0 +1,6 @@
+# Bundle patch layer: mount the workspace-scratch plugin (index.js via the
+# package root export). The profile's own cordis.patch.yml stays the user's
+# patch layer; this file ships with the package and is applied as a bundle.
+- insert:
+    - id: workspace-scratch
+      name: 'dsh-workspace-scratch'
